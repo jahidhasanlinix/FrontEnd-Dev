@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime</title>
+	<script type="text/javascript">
+		function Prime11() {
+			var input=parseInt(document.getElementById("t1").value);
+
+			var b="It is prime";
+
+			if (input==0||input==1) {
+					b="It is not Prime";
+				}
+			for(i=2;i<=input/2;i++) {
+				if (input%i==0) {
+					b="It is not Prime";
+				}
+			}
+			document.getElementById("t2").innerHTML=input+" "+b;
+		}
+
+
+	</script>
+
+</head>
+<body>
+	<form name="form1">
+		<div>
+			<label for="t1">Enter Number: </label>
+			<input type="text" name="t1" id="t1" />
+		</div>
+		<div>
+			<button type="button" onclick="Prime11()">Show Result</button>
+		</div>
+		<div id="t2"></div>
+
+
+
+	</form>
+</body>
+</html>

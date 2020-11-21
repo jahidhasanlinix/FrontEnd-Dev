@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JAVASCRIPT TEST</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.">
+</head>
+<body>
+	<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+<div class="container bg-light m-5">
+	<div class="font-weight-bold">
+		<form>
+			<div class="m-3">
+				Data: <input type="text" id="Data1"/>
+				
+			</div>
+			<div>
+				<div id="text_show"></div>
+			</div><br>
+			<div>
+				<button type="button" onclick="myFunction();">Result below.</button>
+			</div>
+			<hr>
+
+			<div>
+				Input 1: <input type="digit" name="num1" id="num1"/>
+			</div><br>
+			<div>
+				Input 2: <input type="digit" name="num2" id="num2"/>
+			</div><br>
+			<div>
+				<button type="button" onclick="Addition();" >Add</button>
+			</div>
+			<div>
+				<button type="reset">Reset</button>
+			</div><br>
+			<div class="m-5" id="result">
+				
+			</div>
+		</form>
+	</div>
+
+		<!-- <div class="font-weight-bold">
+		<form>
+			
+			<div>
+				Input 1: <input type="digit" name="num1" id="num3"/>
+			</div><br>
+			<div>
+				Input 2: <input type="digit" name="num2" id="num4"/>
+			</div><br>
+			<div>
+				<button type="button" onclick="Subtraction();" >Subtract</button>
+			</div>
+			<div>
+				<button type="reset">Reset</button>
+			</div><br>
+			<div class="m-5" id="result">	
+			</div>
+			
+
+
+		</form>
+	</div>
+	 -->
+
+</div>
+
+
+	<script type="text/javascript">
+		function dataShow(){
+			var data_1=document.getElementById('Data1').value;
+
+			document.getElementById('text_show').innerHTML = "<h1 class='text-danger'>"+ data_1 + "</h1>";
+
+		};
+
+
+		function Addition(){
+			var first_num = parseInt(document.getElementById('num1').value);
+			var sec_num = parseInt(document.getElementById('num2').value);
+
+			var total = first_num + sec_num;
+			document.getElementById('result').innerHTML = total;
+
+			// function Subtraction(){
+			// var first_num = parseInt(document.getElementById('num3').value);
+			// var sec_num = parseInt(document.getElementById('num4').value);
+
+			// var total = first_num - sec_num;
+			// document.getElementById('result').innerHTML = total;
+
+
+		};
+		function myFunction(){
+			var hour = parseInt(document.getElementById('Data1').value);
+			//new Date().getHours();
+			var Output='';
+
+			if (hour <=11){
+				Output ="Good Morning";
+
+			}
+			else if(hour<=19){
+				Output="Good Afternoon";
+			}
+			else{
+				Output="Good Evening";
+			}
+			document.getElementById("text_show").innerHTML=Output;
+		}
+		function showTime(){
+		    var date = new Date();
+		    var h = date.getHours(); // 0 - 23
+		    var m = date.getMinutes(); // 0 - 59
+		    var s = date.getSeconds(); // 0 - 59
+		    var session = "AM";
+		    
+		    if(h == 0){
+		        h = 12;
+		        session = "AM";
+		    }
+		    
+		    if(h > 12){
+		        h = h - 12;
+		        session = "PM";
+		    }
+		    
+		    h = (h < 10) ? "0" + h : h;
+		    m = (m < 10) ? "0" + m : m;
+		    s = (s < 10) ? "0" + s : s;
+		    
+		    var time = h + ":" + m + ":" + s + " " + session;
+		    document.getElementById("MyClockDisplay").innerText = time;
+		    document.getElementById("MyClockDisplay").textContent = time;
+		    
+		    setTimeout(showTime, 1000);
+		    
+		}
+
+		showTime();
+		
+
+
+
+		//var Motor = ['TVs', 'Runner', 'Bajaj'];
+
+
+		//var text = "Hello!";
+		//var text1 = ""
+
+		//document.getElementById("show").innerHTML = Motor;
+
+	</script>
+
+
+	<script type="text/javascript" src="http://www.datejs.com/build/date.js"></script>
+	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	
+
+
+
+</body>
+</html>

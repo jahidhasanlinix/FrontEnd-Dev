@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JAVASCRIPT TEST</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container bg-light m-5">
+	<div class="font-weight-bold">
+		<form>
+			<div>
+				Input 1: <input type="number" name="num1" id="num1"/>
+			</div><br>
+			<div>
+				Input 2: <input type="number" name="num2" id="num2"/>
+			</div><br>
+			<div>
+				<button type="button" onclick="Addition();" >Add</button>
+			</div>
+			<div class="m-5" id="result">
+				
+			</div>
+		</form>
+	</div>
+	
+
+</div>
+
+
+	<script type="text/javascript">
+		function Addition(){
+			var first_num = document.getElementById('num1').value;
+			var sec_num = document.getElementById('num2').value;
+
+			var total = first_num + sec_num;
+			document.getElementById('result').innerHTML = total;
+
+		};
+
+
+		//var Motor = ['TVs', 'Runner', 'Bajaj'];
+
+
+		//var text = "Hello!";
+		//var text1 = ""
+
+		//document.getElementById("show").innerHTML = Motor;
+
+	</script>
+
+	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
